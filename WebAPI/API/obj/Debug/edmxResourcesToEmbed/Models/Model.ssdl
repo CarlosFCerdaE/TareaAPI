@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CreditCard">
+    <Key>
+      <PropertyRef Name="CreditCardID" />
+    </Key>
+    <Property Name="CreditCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="ExpMonth" Type="tinyint" Nullable="false" />
+    <Property Name="ExpYear" Type="smallint" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AWModelStoreContainer">
+    <EntitySet Name="CreditCard" EntityType="Self.CreditCard" Schema="Sales" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
